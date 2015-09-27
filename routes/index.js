@@ -5,7 +5,7 @@ var PlayListController = require('../controller/PlayListController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { artists:['Best','Hello'] });
+   ArtistListController.pickList(req, res);	
 });
 
 module.exports = router;
