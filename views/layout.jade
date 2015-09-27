@@ -4,4 +4,13 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+     block content
+     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+     script(type='text/javascript').
+         $(document).ready(function(){
+             var selectedOne='#{selectedOne}';
+             $( "option" ).each(function() {
+               if($( this ).val() == selectedOne){ $(this).prop('selected',true)}
+             });
+             $("#selectedArtist").change(function(){
+                 console.log($("#tableForm").submit());});})

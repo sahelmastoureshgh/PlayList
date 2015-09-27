@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  select(name='selectedArtist')
-      each item in artists
-          option(value = '#{item}') #{item}
-  h1="#{listId}"
+    form#tableForm(action='/', method='post')
+        select#selectedArtist(name='selectedArtist')
+            each item in artists
+                option(value = '#{item}') #{item}
+    iframe(width='560', height='315', src='http://www.youtube.com/embed/videoseries?list=#{listId}&hl=en_US', frameborder='0')               
